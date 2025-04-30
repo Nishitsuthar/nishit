@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./app/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
   theme: {
@@ -16,6 +16,15 @@ export default {
         sans: ['Inter', 'sans-serif'],
         serif: ['Tiro Kannada', 'serif'],
       },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0 }
+        }
+      },
+      animation: {
+        blink: 'blink 1s step-end infinite'
+      }
     },
   },
   plugins: [
