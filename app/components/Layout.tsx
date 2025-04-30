@@ -10,7 +10,11 @@ const navigation = [
   { name: 'Contact', href: '/contact' },
 ];
 
-export default function Layout() {
+interface LayoutProps {
+  children?: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   const [isDark, setIsDark] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -104,7 +108,7 @@ export default function Layout() {
 
       <main className="pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <Outlet />
+          {children || <Outlet />}
         </div>
       </main>
     </div>
